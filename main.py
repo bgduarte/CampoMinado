@@ -1,23 +1,22 @@
-
-
-
 import pygame
+from minesweeper import Minesweeper
  
 class CampoMinadoApp:
     def __init__(self):
         self.__running = True
         self.__screen = None
+        self.campoMinado = Minesweeper()
         self.size = self.weight, self.height = 640, 400
  
     def on_init(self):
         pygame.init()
-        print('Init')
         self.__screen = pygame.display.set_mode(self.size)
         self.__running = True
  
     def on_event(self, event):
         if event.type == pygame.QUIT:
             self.__running = False
+
     def on_loop(self):
         pass
     def on_render(self):
